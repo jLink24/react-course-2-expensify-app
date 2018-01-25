@@ -12,16 +12,6 @@ import './styles/styles.scss';
 // Initialize store
 const store = configureStore();
 
-// Print updates to store in console
-store.subscribe(() => {
-    console.log(getVisibleExpenses(store.getState().expenses,store.getState().filters));
-});
-
-// Default dummy expense data
-store.dispatch(addExpense({ description: 'Water bill', amount: 4500 }));
-store.dispatch(addExpense({ description: 'Gas bill', createdAt: 1000 }));
-store.dispatch(addExpense({ description: 'rent', createdAt: 200, amount: 109500 }));
-
 // Provider component as a parent component makes the redux store available to the connect function in child components
 // The redux store is provided to the store prop
 const jsx = (
